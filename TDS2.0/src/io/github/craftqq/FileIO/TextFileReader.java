@@ -2,7 +2,9 @@ package io.github.craftqq.FileIO;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class TextFileReader 
@@ -13,7 +15,7 @@ public class TextFileReader
 		
 	}
 	
-	public static String[] readFile(String name)
+	public static String[] readFile(String name) throws FileNotFoundException
 	{
 		ArrayList<String> al = new ArrayList<String>();
 		try
@@ -28,14 +30,19 @@ public class TextFileReader
 			}
 			br.close();
 		}
-		catch(Exception e)
+		catch(FileNotFoundException FNFE)
 		{
-			e.printStackTrace();
+			throw FNFE;
+		}
+		catch(IOException IOE)
+		{
+			System.out.println(IOE);
+			IOE.printStackTrace();
 		}
 		return al.toArray(new String[0]);
 	}
 	
-	public static String[] readFile(File file)
+	public static String[] readFile(File file) throws FileNotFoundException
 	{
 		ArrayList<String> al = new ArrayList<String>();
 		try
@@ -50,9 +57,14 @@ public class TextFileReader
 			}
 			br.close();
 		}
-		catch(Exception e)
+		catch(FileNotFoundException FNFE)
 		{
-			e.printStackTrace();
+			throw FNFE;
+		}
+		catch(IOException IOE)
+		{
+			System.out.println(IOE);
+			IOE.printStackTrace();
 		}
 		return al.toArray(new String[0]);
 	}
