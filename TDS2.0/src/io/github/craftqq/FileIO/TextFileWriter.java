@@ -3,6 +3,7 @@ package io.github.craftqq.FileIO;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class TextFileWriter 
 {
@@ -25,10 +26,10 @@ public class TextFileWriter
 			}
 			bw.close();
 		}
-		catch(Exception e)
+		catch(IOException IOE)
 		{
-			e.printStackTrace();
-			
+			System.out.println(IOE);
+			IOE.printStackTrace();
 		}
 	}
 	
@@ -45,10 +46,10 @@ public class TextFileWriter
 			}
 			bw.close();
 		}
-		catch(Exception e)
+		catch(IOException IOE)
 		{
-			e.printStackTrace();
-			
+			System.out.println(IOE);
+			IOE.printStackTrace();
 		}
 	}
 }
