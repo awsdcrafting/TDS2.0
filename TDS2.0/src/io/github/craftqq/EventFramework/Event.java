@@ -13,6 +13,14 @@ public abstract class Event
     {
         return priority;
     }
+    /**
+     * cancels this event
+     */
+    public abstract void cancel();
     
-    public abstract void cancelEvent();
+    /**
+     * checks wheter or not this event is ready to be handled
+     * @return true if this event is not canceled and can still be handled
+     */
+    public abstract boolean isready();
 }
