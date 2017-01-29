@@ -1,7 +1,7 @@
 package io.github.craftqq.EventFramework;
 
 public abstract class EventHandler
-{   
+{
     private int priority;
     
     public EventHandler(int priority)

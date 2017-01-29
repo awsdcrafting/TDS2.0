@@ -52,7 +52,7 @@ public class EventManager
     
     public boolean removeEventHandler(EventHandler e)
     {
-        if(e!=null)
+        if(e != null)
         {
             return handlers.remove(e);
         }
@@ -63,7 +63,7 @@ public class EventManager
     {
         Iterator<EventHandler> it = handlers.iterator();
         boolean eventHandled = false;
-        while(it.hasNext()&&e.isready())
+        while(it.hasNext() && e.isready())
         {
             EventHandler handler = it.next();
             if(handler.handleEvent(e)) eventHandled = true;
