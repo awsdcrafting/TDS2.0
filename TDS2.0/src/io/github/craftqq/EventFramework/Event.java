@@ -20,7 +20,7 @@ public abstract class Event
     public abstract void cancel();
     
     /**
-     * checks wheter or not this event is ready to be handled
+     * checks whether or not this event is ready to be handled
      * 
      * @return true if this event is not canceled and can still be handled
      */
